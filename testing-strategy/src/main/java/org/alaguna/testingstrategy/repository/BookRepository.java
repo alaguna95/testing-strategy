@@ -1,7 +1,7 @@
 package org.alaguna.testingstrategy.repository;
 
-import org.alaguna.testingstrategy.entity.Book;
+import org.alaguna.testingstrategy.entity.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BookRepository extends JpaRepository<Book, Long> {
+public interface BookRepository extends JpaRepository<BookEntity, Long> {
 }

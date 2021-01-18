@@ -41,7 +41,8 @@ public class AcceptanceTest {
     public void getAllBook() throws Exception{
         String endpoint = "/books";
         int expectedStatusCode = 200;
-        String expectedResponse = "book1, book2";
+        String expectedResponse = "[{\"id\":-1,\"name\":\"Gray Mountain\"},{\"id\":-2,\"name\":\"Speak English\"}]";
+        //TODO: IS THIS THE BEST WAY TO ASSERT ACCEPTANCE TESTS?
 
         mockMvc.perform(get(endpoint)).andExpect(status().is(expectedStatusCode))
                 .andExpect(content().string(expectedResponse));

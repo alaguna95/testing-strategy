@@ -1,6 +1,6 @@
 package org.alaguna.testingstrategy;
 
-import org.alaguna.testingstrategy.entity.Book;
+import org.alaguna.testingstrategy.entity.BookEntity;
 import org.alaguna.testingstrategy.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ class ApplicationTests {
 	@Test
 	void contextLoads() {
 
-		Book book = new Book();
+		BookEntity book = new BookEntity();
 		book.setName("Testcontainers");
 
 		bookRepository.save(book);
