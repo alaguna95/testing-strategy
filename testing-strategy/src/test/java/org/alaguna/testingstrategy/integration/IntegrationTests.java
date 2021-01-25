@@ -1,4 +1,4 @@
-package org.alaguna.testingstrategy;
+package org.alaguna.testingstrategy.integration;
 
 import org.alaguna.testingstrategy.entity.BookEntity;
 import org.alaguna.testingstrategy.repository.BookRepository;
@@ -13,34 +13,23 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
 @SpringBootTest
-class ApplicationTests {
+class IntegrationTests {
 
 	@Container
-	public static PostgreSQLContainer container = new PostgreSQLContainer("postgres:13.1")
+	protected static PostgreSQLContainer container = new PostgreSQLContainer("postgres:13.1")
 			.withUsername("duke")
 			.withPassword("password")
 			.withDatabaseName("test");
 
-	@Autowired
-	private BookRepository bookRepository;
 
 	// requires Spring Boot >= 2.2.6
 	@DynamicPropertySource
-	static void properties(DynamicPropertyRegistry registry) {
+	protected static void properties(DynamicPropertyRegistry registry) {
 		registry.add("spring.datasource.url", container::getJdbcUrl);
 		registry.add("spring.datasource.password", container::getPassword);
 		registry.add("spring.datasource.username", container::getUsername);
 	}
 
-	@Test
-	void contextLoads() {
 
-		BookEntity book = new BookEntity();
-		book.setName("Testcontainers");
-
-		bookRepository.save(book);
-
-		System.out.println("Context loads!");
-	}
 
 }
