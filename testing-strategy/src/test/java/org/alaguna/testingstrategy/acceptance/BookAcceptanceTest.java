@@ -9,10 +9,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BookAcceptanceTest extends AcceptanceTests {
 
     @Test
-    public void getAllBook() throws Exception{
+    public void getAllBooks() throws Exception{
         String endpoint = "/books";
         int expectedStatusCode = 200;
-        String expectedResponse = "[{\"id\":-1,\"name\":\"Gray Mountain\"},{\"id\":-2,\"name\":\"Speak English\"}]";
+        String expectedResponse = "[{\"id\":-1,\"name\":\"Gray Mountain\",\"sheetsName\":10},{\"id\":-2,\"name\":\"Speak English\",\"sheetsName\":200},{\"id\":-3,\"name\":\"Speak English 2\",\"sheetsName\":30}]";
         //TODO: IS THIS THE BEST WAY TO ASSERT ACCEPTANCE TESTS?
 
         mockMvc.perform(get(endpoint)).andExpect(status().is(expectedStatusCode))

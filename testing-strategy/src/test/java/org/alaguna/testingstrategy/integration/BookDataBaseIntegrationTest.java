@@ -11,10 +11,9 @@ public class BookDataBaseIntegrationTest extends IntegrationTests{
     private BookRepository bookRepository;
 
     @Test
-    void contextLoads() {
+    void saveBook() {
 
-        BookEntity book = new BookEntity();
-        book.setName("Testcontainers");
+        BookEntity book = new BookEntity(1L, "Book1", 20);
 
         bookRepository.save(book);
 

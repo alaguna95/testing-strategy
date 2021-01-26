@@ -6,7 +6,7 @@ import org.alaguna.testingstrategy.entity.BookEntity;
 public class BookConverter {
 
     public BookOutputDTO entityToDTO(BookEntity book){
-        return new BookOutputDTO(book.getId(), book.getName());
+        return new BookOutputDTO(book.getId(), book.getName(), book.getSheetsNumber());
     }
 
 }
