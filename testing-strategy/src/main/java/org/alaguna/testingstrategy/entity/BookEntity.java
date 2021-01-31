@@ -10,10 +10,11 @@ public class BookEntity {
 
     }
 
-    public BookEntity(Long id, String name, Integer sheetsNumber){
+    public BookEntity(Long id, String name, Integer sheetsNumber, BookTopicEntity bookTopic){
         this.id = id;
         this.name = name;
         this.sheetsNumber = sheetsNumber;
+        this.bookTopic = bookTopic;
     }
 
     @Id
@@ -26,6 +27,10 @@ public class BookEntity {
     @Column(name = "SHEETS_NUMBER")
     private Integer sheetsNumber;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BOOK_TOPIC_ID")
+    BookTopicEntity bookTopic;
+
     public Long getId() {
         return id;
     }
@@ -37,4 +42,9 @@ public class BookEntity {
     public Integer getSheetsNumber() {
         return sheetsNumber;
     }
+
+    public BookTopicEntity getBookTopic() {
+        return bookTopic;
+    }
+
 }

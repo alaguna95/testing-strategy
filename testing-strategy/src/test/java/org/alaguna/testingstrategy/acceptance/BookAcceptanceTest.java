@@ -12,7 +12,7 @@ public class BookAcceptanceTest extends AcceptanceTests {
     public void getAllBooks() throws Exception{
         String endpoint = "/books";
         int expectedStatusCode = 200;
-        String expectedResponse = "[{\"id\":-1,\"name\":\"Gray Mountain\",\"sheetsName\":10},{\"id\":-2,\"name\":\"Speak English\",\"sheetsName\":200},{\"id\":-3,\"name\":\"Speak English 2\",\"sheetsName\":30}]";
+        String expectedResponse = "[{\"id\":-1,\"name\":\"Gray Mountain\",\"sheetsNumber\":10,\"bookTopic\":{\"id\":-1,\"name\":\"Historical\"}},{\"id\":-2,\"name\":\"Speak English\",\"sheetsNumber\":200,\"bookTopic\":{\"id\":-2,\"name\":\"Educational\"}},{\"id\":-3,\"name\":\"Speak English 2\",\"sheetsNumber\":30,\"bookTopic\":{\"id\":-2,\"name\":\"Educational\"}}]";
         //TODO: IS THIS THE BEST WAY TO ASSERT ACCEPTANCE TESTS?
 
         mockMvc.perform(get(endpoint)).andExpect(status().is(expectedStatusCode))

@@ -2,7 +2,9 @@ package org.alaguna.testingstrategy.unit.converter;
 
 import org.alaguna.testingstrategy.converter.BookConverter;
 import org.alaguna.testingstrategy.dto.BookOutputDTO;
+import org.alaguna.testingstrategy.dto.BookTopicOutputDTO;
 import org.alaguna.testingstrategy.entity.BookEntity;
+import org.alaguna.testingstrategy.objects.dto.BookTopicDtoObjectMother;
 import org.alaguna.testingstrategy.objects.entity.BookBuilder;
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +23,7 @@ public class BookConverterTest {
 
         assertEquals(book.getId(), bookDTO.getId());
         assertEquals(book.getName(), bookDTO.getName());
-        assertEquals(book.getSheetsNumber(), bookDTO.getSheetsName());
+        assertEquals(book.getSheetsNumber(), bookDTO.getSheetsNumber());
+        assertEquals(BookTopicDtoObjectMother.historical(), bookDTO.getBookTopic());
     }
 }

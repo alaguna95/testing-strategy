@@ -1,17 +1,20 @@
 package org.alaguna.testingstrategy.objects.entity;
 
 import org.alaguna.testingstrategy.entity.BookEntity;
+import org.alaguna.testingstrategy.entity.BookTopicEntity;
 
 public class BookBuilder {
 
     private Long id;
     private String name;
     private Integer sheetsNumber;
+    private BookTopicEntity bookTopic;
 
     public BookBuilder(){
         id = 1L;
         name = "Learn english";
         sheetsNumber = 120;
+        bookTopic = BookTopicObjectMother.historical();
     }
 
     public BookBuilder withId(Long id){
@@ -27,8 +30,13 @@ public class BookBuilder {
         return this;
     }
 
+    public BookBuilder withBookTopic(BookTopicEntity bookType){
+        this.bookTopic=bookTopic;
+        return this;
+    }
+
     public BookEntity build(){
-        return new BookEntity(id, name, sheetsNumber);
+        return new BookEntity(id, name, sheetsNumber, bookTopic);
     }
 
 }

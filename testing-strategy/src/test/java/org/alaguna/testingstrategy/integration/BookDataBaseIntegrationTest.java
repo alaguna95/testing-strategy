@@ -1,6 +1,7 @@
 package org.alaguna.testingstrategy.integration;
 
 import org.alaguna.testingstrategy.entity.BookEntity;
+import org.alaguna.testingstrategy.objects.entity.BookBuilder;
 import org.alaguna.testingstrategy.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ public class BookDataBaseIntegrationTest extends IntegrationTests{
 
     @Test
     void saveBook() {
-
-        BookEntity book = new BookEntity(1L, "Book1", 20);
+        BookBuilder bookBuilder = new BookBuilder();
+        BookEntity book = bookBuilder.build();
 
         bookRepository.save(book);
 
