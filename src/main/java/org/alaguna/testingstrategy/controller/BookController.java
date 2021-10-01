@@ -1,10 +1,12 @@
 package org.alaguna.testingstrategy.controller;
 
+import org.alaguna.testingstrategy.dto.BookInputDTO;
 import org.alaguna.testingstrategy.dto.BookOutputDTO;
 import org.alaguna.testingstrategy.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +24,10 @@ public class BookController {
     @GetMapping("/books")
     public ResponseEntity<List<BookOutputDTO>> getAll() {
         return ResponseEntity.ok(bookService.getAll());
+    }
+
+    @PutMapping
+    public ResponseEntity<BookOutputDTO> createBook(BookInputDTO book){
+        return ResponseEntity.ok(bookService.create(book));
     }
 }

@@ -10,7 +10,7 @@ public class BookEntity {
 
     }
 
-    public BookEntity(Long id, String name, Integer sheetsNumber, BookTopicEntity bookTopic){
+    public BookEntity(String id, String name, Integer sheetsNumber, BookTopicEntity bookTopic){
         this.id = id;
         this.name = name;
         this.sheetsNumber = sheetsNumber;
@@ -18,8 +18,7 @@ public class BookEntity {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(name = "NAME")
     private String name;
@@ -31,7 +30,7 @@ public class BookEntity {
     @JoinColumn(name = "BOOK_TOPIC_ID")
     BookTopicEntity bookTopic;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

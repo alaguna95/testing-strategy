@@ -5,19 +5,19 @@ import org.alaguna.testingstrategy.entity.BookTopicEntity;
 
 public class BookBuilder {
 
-    private Long id;
+    private String id;
     private String name;
     private Integer sheetsNumber;
     private BookTopicEntity bookTopic;
 
     public BookBuilder(){
-        id = 1L;
+        id = "17268dbe-22a7-11ec-9621-0242ac130002";
         name = "Learn english";
         sheetsNumber = 120;
         bookTopic = BookTopicObjectMother.historical();
     }
 
-    public BookBuilder withId(Long id){
+    public BookBuilder withId(String id){
         this.id=id;
         return this;
     }

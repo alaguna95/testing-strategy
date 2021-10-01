@@ -2,15 +2,15 @@ package org.alaguna.testingstrategy.dto;
 
 public class BookTopicOutputDTO {
 
-    public BookTopicOutputDTO(Long id, String name) {
+    public BookTopicOutputDTO(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    private Long id;
+    private String id;
     private String name;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

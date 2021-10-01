@@ -11,20 +11,19 @@ public class BookTopicEntity {
 
     }
 
-    public BookTopicEntity(Long id, String name){
+    public BookTopicEntity(String id, String name){
         this.id=id;
         this.name = name;
     }
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(name = "NAME")
     private String name;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

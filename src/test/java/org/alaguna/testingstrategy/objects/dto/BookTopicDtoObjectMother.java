@@ -6,6 +6,6 @@ import org.alaguna.testingstrategy.entity.BookTopicEntity;
 public class BookTopicDtoObjectMother {
 
     public static BookTopicOutputDTO historical(){
-        return new BookTopicOutputDTO(-1L, "Historical");
+        return new BookTopicOutputDTO("17268dbe-22a7-11ec-9621-0242ac130002", "Historical");
     }
 }

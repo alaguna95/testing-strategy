@@ -1,12 +1,12 @@
 package org.alaguna.testingstrategy.dto;
 
-public class BookOutputDTO {
+public class BookInputDTO {
 
-    public BookOutputDTO(String id, String name, Integer sheetsNumber, BookTopicOutputDTO bookTopic){
+    public BookInputDTO(String id, String name, Integer sheetsNumber, String bookTopicId){
         this.id = id;
         this.name = name;
         this.sheetsNumber = sheetsNumber;
-        this.bookTopic = bookTopic;
+        this.bookTopicId = bookTopicId;
     }
 
     private String id;
@@ -15,7 +15,7 @@ public class BookOutputDTO {
 
     private Integer sheetsNumber;
 
-    private BookTopicOutputDTO bookTopic;
+    private String bookTopicId;
 
     public String getId() { return id; }
 
@@ -25,7 +25,8 @@ public class BookOutputDTO {
 
     public Integer getSheetsNumber(){ return sheetsNumber; }
 
-    public BookTopicOutputDTO getBookTopic() {
-        return bookTopic;
+    public String getBookTopicId() {
+        return bookTopicId;
     }
+
 }
