@@ -2,6 +2,9 @@ plugins {
 	id 'org.springframework.boot' version '2.4.1'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'jacoco'
+	id 'org.sonarqube' version '3.3'
+	id 'com.avast.gradle.docker-compose' version '0.14.3'
 }
 
 group = 'org.alaguna'
@@ -25,4 +28,23 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+
+sonarqube {
+	properties {
+		property 'sonar.host.url', 'http://localhost:9000'
+		property 'sonar.login', 'admin'
+		property 'sonar.password', 'admin22'
+	}
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+	}
+}
+test.finalizedBy jacocoTestReport
+tasks.named('sonarqube').configure {
+	dependsOn test
 }
