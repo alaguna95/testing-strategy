@@ -31,7 +31,7 @@ public class BookBuilder {
     }
 
     public BookBuilder withBookTopic(BookTopicEntity bookType){
-        this.bookTopic=bookTopic;
+        this.bookTopic=bookType;
         return this;
     }
 

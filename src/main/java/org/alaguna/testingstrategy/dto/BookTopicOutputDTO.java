@@ -1,5 +1,10 @@
 package org.alaguna.testingstrategy.dto;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+@Getter
+@EqualsAndHashCode
 public class BookTopicOutputDTO {
 
     public BookTopicOutputDTO(String id, String name) {
@@ -10,18 +15,4 @@ public class BookTopicOutputDTO {
     private String id;
     private String name;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public boolean equals(Object object){
-        BookTopicOutputDTO bookTopic  = (BookTopicOutputDTO) object;
-
-        return id.equals(bookTopic.getId()) && name.equals(bookTopic.getName());
-    }
 }

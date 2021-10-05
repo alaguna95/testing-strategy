@@ -1,9 +1,12 @@
 package org.alaguna.testingstrategy.entity;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
+@Getter
 public class BookEntity {
 
     public BookEntity(){
@@ -29,21 +32,5 @@ public class BookEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BOOK_TOPIC_ID")
     BookTopicEntity bookTopic;
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getSheetsNumber() {
-        return sheetsNumber;
-    }
-
-    public BookTopicEntity getBookTopic() {
-        return bookTopic;
-    }
 
 }

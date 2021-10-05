@@ -1,10 +1,13 @@
 package org.alaguna.testingstrategy.entity;
 
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "book_topics")
+@Getter
 public class BookTopicEntity {
 
     public BookTopicEntity(){
@@ -23,11 +26,4 @@ public class BookTopicEntity {
     @Column(name = "NAME")
     private String name;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
 }

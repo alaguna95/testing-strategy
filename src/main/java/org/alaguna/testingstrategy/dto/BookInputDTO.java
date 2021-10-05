@@ -1,5 +1,8 @@
 package org.alaguna.testingstrategy.dto;
 
+import lombok.Getter;
+
+@Getter
 public class BookInputDTO {
 
     public BookInputDTO(String id, String name, Integer sheetsNumber, String bookTopicId){
@@ -16,17 +19,5 @@ public class BookInputDTO {
     private Integer sheetsNumber;
 
     private String bookTopicId;
-
-    public String getId() { return id; }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getSheetsNumber(){ return sheetsNumber; }
-
-    public String getBookTopicId() {
-        return bookTopicId;
-    }
 
 }

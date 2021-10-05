@@ -1,5 +1,8 @@
 package org.alaguna.testingstrategy.dto;
 
+import lombok.Getter;
+
+@Getter
 public class BookOutputDTO {
 
     public BookOutputDTO(String id, String name, Integer sheetsNumber, BookTopicOutputDTO bookTopic){
@@ -17,15 +20,4 @@ public class BookOutputDTO {
 
     private BookTopicOutputDTO bookTopic;
 
-    public String getId() { return id; }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getSheetsNumber(){ return sheetsNumber; }
-
-    public BookTopicOutputDTO getBookTopic() {
-        return bookTopic;
-    }
 }

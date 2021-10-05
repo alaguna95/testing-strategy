@@ -4,6 +4,7 @@ import org.alaguna.testingstrategy.converter.BookConverter;
 import org.alaguna.testingstrategy.dto.BookOutputDTO;
 import org.alaguna.testingstrategy.dto.BookTopicOutputDTO;
 import org.alaguna.testingstrategy.entity.BookEntity;
+import org.alaguna.testingstrategy.entity.BookTopicEntity;
 import org.alaguna.testingstrategy.objects.dto.BookTopicDtoObjectMother;
 import org.alaguna.testingstrategy.objects.entity.BookBuilder;
 import org.junit.jupiter.api.Test;
